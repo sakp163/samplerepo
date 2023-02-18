@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "first" {
   bucket = "${local.project_env}-bucket"
-  acl = "private"
+  #acl = "private"
 
   tags = {
     Name        = local.project_env
@@ -8,7 +8,7 @@ resource "aws_s3_bucket" "first" {
   }
 }
 
-# resource "aws_s3_bucket_acl" "first" {
-#   bucket = aws_s3_bucket.first.id
-#   acl    = "public-read"
-# }
+resource "aws_s3_bucket_acl" "first" {
+  bucket = aws_s3_bucket.first.id
+  acl    = "public-read"
+}

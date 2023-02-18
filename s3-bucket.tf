@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "first" {
 
   tags = {
     Name        = local.project_env
-    Environment = "Dev"
+    Environment = "dev"
   }
 }
 

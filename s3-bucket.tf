@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "first" {
+resource "aws_s3_bucket" "First" {
   bucket = "${local.project_env}-bucket"
   #acl = "private"
 
@@ -8,7 +8,7 @@ resource "aws_s3_bucket" "first" {
   }
 }
 
-resource "aws_s3_bucket_acl" "first" {
-  bucket = aws_s3_bucket.first.id
+resource "aws_s3_bucket_acl" "First" {
+  bucket = aws_s3_bucket.First.id
   acl    = "public-read"
 }
